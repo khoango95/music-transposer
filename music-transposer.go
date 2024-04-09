@@ -12,12 +12,8 @@ func firstN(s string, n int) string {
 	return s
 }
 
-func Transpose(inputText string, transposeValue int) string {
+func Transpose(inputText string, transposeValue *int) string {
 	chordList := []string{"C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B"}
-	// inputText := "C# B A Gm7 F#m7 D# C E7 A#m"
-	// var transposeValue int
-	// fmt.Scan(&transposeValue)
-
 	outputText := ""
 
 	text := strings.Split(inputText, " ")
@@ -32,7 +28,7 @@ func Transpose(inputText string, transposeValue int) string {
 		}
 
 		index := slices.Index(chordList, itemFiltered)
-		newIndex := index + transposeValue
+		newIndex := index + *transposeValue
 
 		if newIndex < 0 {
 			newIndex += 12

@@ -17,7 +17,7 @@ func main() {
 	var transposeValue int
 	fmt.Scan(&transposeValue)
 
-	outputText := transposer.Transpose(inputText, transposeValue)
+	outputText := transposer.Transpose(inputText, &transposeValue)
 
 	fmt.Println("-Chords transposed:\t", outputText)
 }
